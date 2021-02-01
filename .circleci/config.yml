@@ -25,6 +25,9 @@ jobs:
           name: Run Lint
           command: npm run lint
   deploy:
+    working_directory: ~/financial-planning
+    docker:
+      - image: circleci/node:14.2.0
     steps:
       - run:
           name: Deploy to Firebase
